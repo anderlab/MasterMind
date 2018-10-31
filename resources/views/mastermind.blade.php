@@ -11,8 +11,10 @@
 <img src="images/6.png">
 <img src="images/7.png">
 <?php 
-	 
-	$aciertos=Session::get('aciertos');
+	 if(Session::get('aciertos')!=null){
+	 	$aciertos=Session::get('aciertos');
+	 }
+	
 
 	$nombre=Session::get("nombre");
 	$longitud=Session::get("longitud");
@@ -23,9 +25,6 @@
 	$colores=Session::get('colores');
 	$color=Session::get('color');
 	$coloresMezclados=Session::get("coloresMezclados");
-
-
-
 
 ?>
 

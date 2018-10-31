@@ -23,8 +23,6 @@ class MasterMindController extends Controller
 		}
 
 
-
-
 		Session::put ("nombre",$request->input("nombre"));
 		Session::put ("longitud", $request->input('longitud'));
 		Session::put ("numColores", $request->input('numColores'));
@@ -34,10 +32,8 @@ class MasterMindController extends Controller
 		Session::put ("colores", $colores);
 		Session::put ("color",$request->input('color'));
 		Session::put ("coloresMezclados", $coloresMezclados);
+		Session::put ("aciertos",0);
 		
-		
-
-
 
 		return view("mastermind");
 	}
@@ -50,7 +46,8 @@ class MasterMindController extends Controller
 
 		$coloresJugador = [];
 		$long = Session::get("longitud");
-		$aciertos=0;
+		$aciertos = 0;
+		
 
 		for ($i=0; $i < $long ; $i++) { 
 			array_push($coloresJugador, $request->input("input".$i));
